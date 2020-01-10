@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   color: #333;
@@ -14,7 +15,7 @@ h1 {
 }
 
 .body {
-  background-image: linear-gradient(165deg, rgba(214, 228, 205, 0.8), rgba(214, 228, 205, 0.1) 66%), linear-gradient(295deg, rgba(217, 191, 205, 0.8), rgba(217, 191, 205, 0.1) 75%), linear-gradient(25deg, rgba(198, 191, 217, 0.8), rgba(198, 191, 217, 0.1) 75%);
+  background-image: linear-gradient(122deg, rgba(228, 226, 205, 0.28), rgba(211, 208, 243, 0.09) 66%), linear-gradient(295deg, rgba(15, 170, 236, 0.21), rgba(217, 191, 205, 0.1) 75%), linear-gradient(25deg, rgba(198, 191, 217, 0.8), rgba(198, 191, 217, 0.1) 75%);
   font-family: Lora, sans-serif;
   color: rgba(6, 15, 0, 0.95);
   font-size: 1em;
@@ -26,10 +27,6 @@ h1 {
   display: block;
   padding-top: 10vw;
   padding-bottom: 0px;
-}
-
-.section.section2 {
-  display: none;
 }
 
 .kevin {
@@ -49,26 +46,6 @@ h1 {
 
 .kg {
   display: none;
-}
-
-.collapsable {
-  position: relative;
-  display: inline-block;
-  color: #2a436f;
-  text-decoration: none;
-  cursor: w-resize;
-}
-
-.collapsable:hover {
-  letter-spacing: normal;
-  text-decoration: none;
-}
-
-.collapsable:focus {
-  -webkit-transform: translate(0em, -0.125em);
-  -ms-transform: translate(0em, -0.125em);
-  transform: translate(0em, -0.125em);
-  text-decoration: none;
 }
 
 .expandable {
@@ -107,7 +84,7 @@ h1 {
   display: none;
 }
 
-.hello {
+.handwave {
   display: inline-block;
   padding: 0px;
   background-color: transparent;
@@ -223,15 +200,7 @@ h1 {
   display: none;
 }
 
-.contact {
-  display: none;
-  margin-left: 0.5em;
-  padding: 0px;
-  background-color: transparent;
-  font-size: 2em;
-}
-
-.container-2 {
+.welcome {
   margin-bottom: 0.5em;
 }
 
@@ -285,3 +254,76 @@ h1 {
   text-align: center;
 }
 
+/* from html head */
+
+.section {
+  width: calc(100% - 2em);
+  max-width: 40em;
+  margin: 0 auto;
+}
+a, .collapsable, .expandable {
+  display: inline-block;
+  transition: all .125s ease-out;
+  position: relative;
+}
+a::after, .expandable::after, .collapsable::after {
+  content: "";
+  display: block;
+  position: relative;
+  height: 1px;
+  background-color: #00b8ff;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  transition: all .125s ease-out;
+}
+a.external::after {
+  height: 3px;
+}
+a:hover,
+a:focus,
+.expandable:hover, 
+.expandable:focus, 
+.collapsable:hover, 
+.collapsable:focus {
+  transition: all .125s ease-in;
+}
+a:hover::after,
+a:focus::after,
+.expandable:hover::after, 
+.expandable:focus::after, 
+.collapsable:hover::after, 
+.collapsable:focus::after {
+  transition: all .125s ease-in;
+}
+a:hover,
+a:focus,
+.expandable:hover,
+.expandable:focus {
+  transform: translateY(-.1em);
+}
+a.external:hover,
+a.external:focus {
+  transform: translateY(0);
+}
+a:hover::after,
+a:focus::after,
+.expandable:hover::after,
+.expandable:focus::after {
+  transform: translateY(.1em);
+}
+a.external:hover::after,
+a.external:focus::after {
+  background-color: rgba(0, 183, 255, 0.25);
+  height: 1.5em;
+  width: calc(100% + .5em);
+  transform: translateX(-.25em);
+  bottom: 1.5em;
+}
+.collapsable:hover::after,
+.collapsable:focus::after {
+  transform: translateY(-.1em);
+}
+.w-container {
+  max-width: 100%;
+}
